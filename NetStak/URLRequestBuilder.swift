@@ -11,10 +11,10 @@ import Foundation
 struct URLRequestBuilder {
     
     // MARK: - URLRequest
-    static func create(with url: URL, type: HTTPMethod) -> URLRequest {
+    static func create(with url: URL, type: NetStakHTTPMethod) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = type.rawValue
-        request.setValue(ServiceConstants.applicationJsonValue, forHTTPHeaderField: ServiceConstants.contentTypeKey)
+        request.setValue(NetStakServiceConstants.applicationJsonValue, forHTTPHeaderField: NetStakServiceConstants.contentTypeKey)
         return request
     }
     

@@ -10,7 +10,7 @@ import Foundation
 
 public protocol RequestProtocol {
     
-    var requestTypeMethod: HTTPMethod { get }
+    var requestTypeMethod: NetStakHTTPMethod { get }
     var urlPath: String { get }
     var mockFileName: String { get }
     var urlArguments: [URLQueryItem]? { get }

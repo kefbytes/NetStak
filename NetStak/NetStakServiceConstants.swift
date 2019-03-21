@@ -1,5 +1,5 @@
 //
-//  ServiceConstants.swift
+//  NetStakServiceConstants.swift
 //  NetStak
 //
 //  Created by Kent Franks on 2/15/19.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-public enum HTTPMethod: String {
+public enum NetStakHTTPMethod: String {
     case get
     case post
     case put
 }
 
-struct ServiceConstants {
+struct NetStakServiceConstants {
     static let applicationJsonValue = "Application/json"
     static let contentTypeKey = "Content-Type"
 }

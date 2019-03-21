@@ -55,7 +55,7 @@ public class ServerConnection {
         }
     }
     
-    public func execute(with request: RequestProtocol, and type: HTTPMethod, completion: @escaping (executeCompletion)) {
+    public func execute(with request: RequestProtocol, and type: NetStakHTTPMethod, completion: @escaping (executeCompletion)) {
         var dataTask: URLSessionDataTask?
         if serverConfig.discoMode {
             guard let jsonData = MockJsonReader.readJson(with: request.mockFileName) else {
@@ -94,7 +94,7 @@ public class ServerConnection {
         }
     }
     
-    public func execute(withMultipleAsyncRequests requests: [RequestProtocol], and type: HTTPMethod, completion: @escaping (executeGroupCompletionDifferentTypes)) {
+    public func execute(withMultipleAsyncRequests requests: [RequestProtocol], and type: NetStakHTTPMethod, completion: @escaping (executeGroupCompletionDifferentTypes)) {
         var dataTask: URLSessionDataTask?
         var responseDict: [String : ResponseProtocol] = [String : ResponseProtocol]()
         if serverConfig.discoMode {
