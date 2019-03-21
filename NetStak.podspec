@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         			= 'NetStak'
-  spec.version     	 			= '1.0.0'
+  spec.version     	 			= '1.0.1'
   spec.license      			= { :type => 'BSD', :file => 'LICENSE.md' }
   spec.homepage     			= 'https://github.com/kefbytes/NetStak.git'
   spec.authors      			= { 'Kent Franks' => 'kent@kefbytes.com' }
