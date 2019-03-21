@@ -19,8 +19,8 @@ public struct ServerConfig: ServerConfigProtocol {
     public var discoMode: Bool =  false
     
     public init() {
-        discoMode = Session.discoMode
-        switch Session.environment {
+        discoMode = NetStakSession.discoMode
+        switch NetStakSession.environment {
         case .dev:
             hostBase = "https://swapi.co/api"
         case .qa:

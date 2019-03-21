@@ -1,5 +1,5 @@
 //
-//  Session.swift
+//  NetStakSession.swift
 //  NetStak
 //
 //  Created by Kent Franks on 2/19/19.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-public enum Environment: String {
+public enum NetStakEnvironment: String {
     case dev = "Dev"
     case qa = "QA"
     case uat = "UAT"
     case prod = "Prod"
 }
 
-public struct Session {
+public struct NetStakSession {
     public static var discoMode = false
-    public static var environment: Environment = .dev
+    public static var environment: NetStakEnvironment = .dev
 }
