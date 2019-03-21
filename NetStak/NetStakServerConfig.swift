@@ -1,5 +1,5 @@
 //
-//  ServerConfig.swift
+//  NetStakServerConfig.swift
 //  NetStak
 //
 //  Created by Kent Franks on 2/12/19.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-public protocol ServerConfigProtocol {
+public protocol NetStakServerConfigProtocol {
     var hostBase: String { get }
     var discoMode: Bool { get }
 }
 
-public struct ServerConfig: ServerConfigProtocol {
+public struct NetStakServerConfig: NetStakServerConfigProtocol {
     
     public var hostBase: String = "https://swapi.co/api"
     public var discoMode: Bool =  false

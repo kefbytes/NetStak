@@ -1,5 +1,5 @@
 //
-//  RequestProtocol.swift
+//  NetStakRequestProtocol.swift
 //  NetStak
 //
 //  Created by Kent Franks on 2/12/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol RequestProtocol {
+public protocol NetStakRequestProtocol {
     
     var requestTypeMethod: NetStakHTTPMethod { get }
     var urlPath: String { get }
@@ -16,12 +16,12 @@ public protocol RequestProtocol {
     var urlArguments: [URLQueryItem]? { get }
     var headerItems: [String: String]? { get }
     var requestBody: Data? { get }
-    var responseType: ResponseProtocol.Type { get }
+    var responseType: NetStakResponseProtocol.Type { get }
     var taskId: String { get }
     
 }
 
-public extension RequestProtocol {
+public extension NetStakRequestProtocol {
     var taskId: String {
         get {
             return "dataTaskId.\(urlPath)"

@@ -1,5 +1,5 @@
 //
-//  URLRequestBuilder.swift
+//  NetStakURLRequest.swift
 //  NetStak
 //
 //  Created by Kent Franks on 2/15/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct URLRequestBuilder {
+struct NetStakURLRequest {
     
     // MARK: - URLRequest
     static func create(with url: URL, type: NetStakHTTPMethod) -> URLRequest {

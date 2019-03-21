@@ -1,5 +1,5 @@
 //
-//  ResponseProtocol.swift
+//  NetStakResponseProtocol.swift
 //  NetStak
 //
 //  Created by Kent Franks on 2/12/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol ResponseProtocol {
+public protocol NetStakResponseProtocol {
     
     var urlResponse: URLResponse? { get }
     init(data: Data?, urlResponse: URLResponse?) throws
