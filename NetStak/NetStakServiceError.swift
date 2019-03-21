@@ -1,5 +1,5 @@
 //
-//  ServiceError.swift
+//  NetStakServiceError.swift
 //  NetStak
 //
 //  Created by Kent Franks on 2/13/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ServiceError: Error {
+enum NetStakServiceError: Error {
     case unbuildableURL
     case unableToInitResponseObject
     case unableToReadMockJson

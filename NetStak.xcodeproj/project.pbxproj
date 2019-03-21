@@ -15,7 +15,7 @@
 		AED335162243DE3200837358 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335152243DE3200837358 /* ServerConfig.swift */; };
 		AED335182243E1E500837358 /* ServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335172243E1E500837358 /* ServerConnection.swift */; };
 		AED3351A2243E45200837358 /* MockJsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335192243E45200837358 /* MockJsonReader.swift */; };
-		AED3351C2243E48C00837358 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3351B2243E48C00837358 /* ServiceError.swift */; };
+		AED3351C2243E48C00837358 /* NetStakServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3351B2243E48C00837358 /* NetStakServiceError.swift */; };
 		AED3351E2243E71100837358 /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3351D2243E71100837358 /* URLHelper.swift */; };
 		AED335202243E7F700837358 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3351F2243E7F700837358 /* URLRequestBuilder.swift */; };
 /* End PBXBuildFile section */
@@ -31,7 +31,7 @@
 		AED335152243DE3200837358 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
 		AED335172243E1E500837358 /* ServerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConnection.swift; sourceTree = "<group>"; };
 		AED335192243E45200837358 /* MockJsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJsonReader.swift; sourceTree = "<group>"; };
-		AED3351B2243E48C00837358 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		AED3351B2243E48C00837358 /* NetStakServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStakServiceError.swift; sourceTree = "<group>"; };
 		AED3351D2243E71100837358 /* URLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
 		AED3351F2243E7F700837358 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,13 +69,13 @@
 				AE260C7C2243CE82009E4346 /* NetStak.h */,
 				AE260C7D2243CE82009E4346 /* Info.plist */,
 				AE260C842243CEAA009E4346 /* NetStakSession.swift */,
-				AED3350F2243DBE300837358 /* RequestProtocol.swift */,
 				AED335112243DC3100837358 /* NetStakServiceConstants.swift */,
+				AED3351B2243E48C00837358 /* NetStakServiceError.swift */,
+				AED3350F2243DBE300837358 /* RequestProtocol.swift */,
 				AED335132243DCFC00837358 /* ResponseProtocol.swift */,
 				AED335152243DE3200837358 /* ServerConfig.swift */,
 				AED335172243E1E500837358 /* ServerConnection.swift */,
 				AED335192243E45200837358 /* MockJsonReader.swift */,
-				AED3351B2243E48C00837358 /* ServiceError.swift */,
 				AED3351D2243E71100837358 /* URLHelper.swift */,
 				AED3351F2243E7F700837358 /* URLRequestBuilder.swift */,
 			);
@@ -161,7 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AED3351C2243E48C00837358 /* ServiceError.swift in Sources */,
+				AED3351C2243E48C00837358 /* NetStakServiceError.swift in Sources */,
 				AED335202243E7F700837358 /* URLRequestBuilder.swift in Sources */,
 				AED335162243DE3200837358 /* ServerConfig.swift in Sources */,
 				AED335122243DC3100837358 /* NetStakServiceConstants.swift in Sources */,

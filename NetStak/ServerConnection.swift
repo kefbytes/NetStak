@@ -26,14 +26,14 @@ public class ServerConnection {
         var dataTask: URLSessionDataTask?
         if serverConfig.discoMode {
             guard let jsonData = MockJsonReader.readJson(with: request.mockFileName) else {
-                completion(nil, ServiceError.unableToReadMockJson)
+                completion(nil, NetStakServiceError.unableToReadMockJson)
                 return
             }
             do {
                 let response = try request.responseType.init(data: jsonData, urlResponse: nil)
                 completion(response, nil)
             } catch {
-                completion(nil, ServiceError.unableToInitResponseObject)
+                completion(nil, NetStakServiceError.unableToInitResponseObject)
             }
         } else {
             dataTask = defaultSession.dataTask(with: url) {
@@ -47,7 +47,7 @@ public class ServerConnection {
                     let response = try request.responseType.init(data: data, urlResponse: unwrappedResponse)
                     completion(response, nil)
                 } catch {
-                    completion(nil, ServiceError.unableToInitResponseObject)
+                    completion(nil, NetStakServiceError.unableToInitResponseObject)
                 }
             }
             dataTask?.resume()
@@ -59,18 +59,18 @@ public class ServerConnection {
         var dataTask: URLSessionDataTask?
         if serverConfig.discoMode {
             guard let jsonData = MockJsonReader.readJson(with: request.mockFileName) else {
-                completion(nil, ServiceError.unableToReadMockJson)
+                completion(nil, NetStakServiceError.unableToReadMockJson)
                 return
             }
             do {
                 let response = try request.responseType.init(data: jsonData, urlResponse: nil)
                 completion(response, nil)
             } catch {
-                completion(nil, ServiceError.unableToInitResponseObject)
+                completion(nil, NetStakServiceError.unableToInitResponseObject)
             }
         } else {
             guard let url = URLHelper.buildURL(with: serverConfig, request: request) else {
-                completion(nil, ServiceError.unbuildableURL)
+                completion(nil, NetStakServiceError.unbuildableURL)
                 return
             }
             let urlRequest = URLRequestBuilder.create(with: url, type: type)
@@ -86,7 +86,7 @@ public class ServerConnection {
                     let response = try request.responseType.init(data: data, urlResponse: unwrappedResponse)
                     completion(response, nil)
                 } catch {
-                    completion(nil, ServiceError.unableToInitResponseObject)
+                    completion(nil, NetStakServiceError.unableToInitResponseObject)
                 }
             }
             dataTask?.resume()
@@ -99,7 +99,7 @@ public class ServerConnection {
         var responseDict: [String : ResponseProtocol] = [String : ResponseProtocol]()
         if serverConfig.discoMode {
             guard let jsonData = MockJsonReader.readJson(with: requests[0].mockFileName) else {
-                completion(nil, ServiceError.unableToReadMockJson)
+                completion(nil, NetStakServiceError.unableToReadMockJson)
                 return
             }
             do {
@@ -107,7 +107,7 @@ public class ServerConnection {
                 responseDict[requests[0].urlPath] = response
                 completion(responseDict, nil)
             } catch {
-                completion(nil, ServiceError.unableToInitResponseObject)
+                completion(nil, NetStakServiceError.unableToInitResponseObject)
             }
         } else {
             let dispatchGroup = DispatchGroup()
@@ -115,7 +115,7 @@ public class ServerConnection {
             for request in unwrappedRequests {
                 dispatchGroup.enter()
                 guard let url = URLHelper.buildURL(with: serverConfig, request: request) else {
-                    completion(nil, ServiceError.unbuildableURL)
+                    completion(nil, NetStakServiceError.unbuildableURL)
                     return
                 }
                 let urlRequest = URLRequestBuilder.create(with: url, type: type)
@@ -135,7 +135,7 @@ public class ServerConnection {
                         responseDict[request.urlPath] = response
                         
                     } catch {
-                        completion(nil, ServiceError.unableToInitResponseObject)
+                        completion(nil, NetStakServiceError.unableToInitResponseObject)
                         dispatchGroup.leave()
                     }
                     dispatchGroup.leave()
