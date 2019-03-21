@@ -13,23 +13,25 @@ public protocol NetStakServerConfigProtocol {
     var discoMode: Bool { get }
 }
 
+// TODO: hostBase must be set to your value
 public struct NetStakServerConfig: NetStakServerConfigProtocol {
     
-    // TODO: hostBase must be set to your value
-    public var hostBase: String = "https://swapi.co/api"
+    #warning("NetStak: Set the hostBase default value")
+    public var hostBase: String = ""
     public var discoMode: Bool =  false
     
+    #warning("NetStak: Set the hostBase for each environment")
     public init() {
         discoMode = NetStakSession.discoMode
         switch NetStakSession.environment {
         case .dev:
-            hostBase = "https://swapi.co/api"
+            hostBase = ""
         case .qa:
-            hostBase = "https://swapi.co/api"
+            hostBase = ""
         case .uat:
-            hostBase = "https://swapi.co/api"
+            hostBase = ""
         case .prod:
-            hostBase = "https://swapi.co/api"
+            hostBase = ""
         }
     }
 }
