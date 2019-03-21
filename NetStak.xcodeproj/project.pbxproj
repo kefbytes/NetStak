@@ -21,7 +21,6 @@
 		AED3352E2243F87D00837358 /* NetStak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE260C792243CE82009E4346 /* NetStak.framework */; };
 		AED335352243F97700837358 /* NetStakURLHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335342243F97700837358 /* NetStakURLHelperTests.swift */; };
 		AED335382244093D00837358 /* NetStakURLRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335372244093D00837358 /* NetStakURLRequestTests.swift */; };
-		AED3353C22440FFB00837358 /* FetchCharacters.json in Resources */ = {isa = PBXBuildFile; fileRef = AED3353B22440FFA00837358 /* FetchCharacters.json */; };
 		AED3354422441B3700837358 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3354322441B3700837358 /* AppDelegate.swift */; };
 		AED3354622441B3700837358 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3354522441B3700837358 /* ViewController.swift */; };
 		AED3354922441B3700837358 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED3354722441B3700837358 /* Main.storyboard */; };
@@ -57,7 +56,6 @@
 		AED3352D2243F87D00837358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AED335342243F97700837358 /* NetStakURLHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStakURLHelperTests.swift; sourceTree = "<group>"; };
 		AED335372244093D00837358 /* NetStakURLRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStakURLRequestTests.swift; sourceTree = "<group>"; };
-		AED3353B22440FFA00837358 /* FetchCharacters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = FetchCharacters.json; path = ../../ModuleTest/ModuleTest/Mock/JSON/FetchCharacters.json; sourceTree = "<group>"; };
 		AED3354122441B3700837358 /* NetStakExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetStakExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED3354322441B3700837358 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AED3354522441B3700837358 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 		AE260C7B2243CE82009E4346 /* NetStak */ = {
 			isa = PBXGroup;
 			children = (
-				AED3353B22440FFA00837358 /* FetchCharacters.json */,
 				AE260C7C2243CE82009E4346 /* NetStak.h */,
 				AE260C7D2243CE82009E4346 /* Info.plist */,
 				AE260C842243CEAA009E4346 /* NetStakSession.swift */,
@@ -270,7 +267,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AED3353C22440FFB00837358 /* FetchCharacters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
