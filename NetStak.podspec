@@ -9,6 +9,6 @@ Pod::Spec.new do |spec|
   spec.source_files 			= 'NetStak/*.swift'
   spec.framework    			= 'Foundation'
   spec.swift_version			= '4.2'
-  spec.ios.deployment_target	= '12.1'
+  spec.ios.deployment_target	= '10.0'
   
 end
