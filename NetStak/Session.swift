@@ -16,6 +16,6 @@ public enum Environment: String {
 }
 
 public struct Session {
-    static var discoMode = false
+    public static var discoMode = false
     public static var environment: Environment = .dev
 }

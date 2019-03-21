@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		AE260C7E2243CE82009E4346 /* NetStak.h in Headers */ = {isa = PBXBuildFile; fileRef = AE260C7C2243CE82009E4346 /* NetStak.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE260C852243CEAA009E4346 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE260C842243CEAA009E4346 /* Session.swift */; };
+		AED335102243DBE300837358 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3350F2243DBE300837358 /* RequestProtocol.swift */; };
+		AED335122243DC3100837358 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335112243DC3100837358 /* ServiceConstants.swift */; };
+		AED335142243DCFC00837358 /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335132243DCFC00837358 /* ResponseProtocol.swift */; };
+		AED335162243DE3200837358 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335152243DE3200837358 /* ServerConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +20,10 @@
 		AE260C7C2243CE82009E4346 /* NetStak.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetStak.h; sourceTree = "<group>"; };
 		AE260C7D2243CE82009E4346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE260C842243CEAA009E4346 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		AED3350F2243DBE300837358 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		AED335112243DC3100837358 /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
+		AED335132243DCFC00837358 /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
+		AED335152243DE3200837358 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,10 @@
 				AE260C7C2243CE82009E4346 /* NetStak.h */,
 				AE260C7D2243CE82009E4346 /* Info.plist */,
 				AE260C842243CEAA009E4346 /* Session.swift */,
+				AED3350F2243DBE300837358 /* RequestProtocol.swift */,
+				AED335112243DC3100837358 /* ServiceConstants.swift */,
+				AED335132243DCFC00837358 /* ResponseProtocol.swift */,
+				AED335152243DE3200837358 /* ServerConfig.swift */,
 			);
 			path = NetStak;
 			sourceTree = "<group>";
@@ -134,7 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AED335162243DE3200837358 /* ServerConfig.swift in Sources */,
+				AED335122243DC3100837358 /* ServiceConstants.swift in Sources */,
 				AE260C852243CEAA009E4346 /* Session.swift in Sources */,
+				AED335142243DCFC00837358 /* ResponseProtocol.swift in Sources */,
+				AED335102243DBE300837358 /* RequestProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
