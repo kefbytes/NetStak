@@ -13,6 +13,11 @@
 		AED335122243DC3100837358 /* ServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335112243DC3100837358 /* ServiceConstants.swift */; };
 		AED335142243DCFC00837358 /* ResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335132243DCFC00837358 /* ResponseProtocol.swift */; };
 		AED335162243DE3200837358 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335152243DE3200837358 /* ServerConfig.swift */; };
+		AED335182243E1E500837358 /* ServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335172243E1E500837358 /* ServerConnection.swift */; };
+		AED3351A2243E45200837358 /* MockJsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335192243E45200837358 /* MockJsonReader.swift */; };
+		AED3351C2243E48C00837358 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3351B2243E48C00837358 /* ServiceError.swift */; };
+		AED3351E2243E71100837358 /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3351D2243E71100837358 /* URLHelper.swift */; };
+		AED335202243E7F700837358 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3351F2243E7F700837358 /* URLRequestBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		AED335112243DC3100837358 /* ServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstants.swift; sourceTree = "<group>"; };
 		AED335132243DCFC00837358 /* ResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseProtocol.swift; sourceTree = "<group>"; };
 		AED335152243DE3200837358 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
+		AED335172243E1E500837358 /* ServerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConnection.swift; sourceTree = "<group>"; };
+		AED335192243E45200837358 /* MockJsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJsonReader.swift; sourceTree = "<group>"; };
+		AED3351B2243E48C00837358 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		AED3351D2243E71100837358 /* URLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
+		AED3351F2243E7F700837358 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,11 @@
 				AED335112243DC3100837358 /* ServiceConstants.swift */,
 				AED335132243DCFC00837358 /* ResponseProtocol.swift */,
 				AED335152243DE3200837358 /* ServerConfig.swift */,
+				AED335172243E1E500837358 /* ServerConnection.swift */,
+				AED335192243E45200837358 /* MockJsonReader.swift */,
+				AED3351B2243E48C00837358 /* ServiceError.swift */,
+				AED3351D2243E71100837358 /* URLHelper.swift */,
+				AED3351F2243E7F700837358 /* URLRequestBuilder.swift */,
 			);
 			path = NetStak;
 			sourceTree = "<group>";
@@ -146,11 +161,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AED3351C2243E48C00837358 /* ServiceError.swift in Sources */,
+				AED335202243E7F700837358 /* URLRequestBuilder.swift in Sources */,
 				AED335162243DE3200837358 /* ServerConfig.swift in Sources */,
 				AED335122243DC3100837358 /* ServiceConstants.swift in Sources */,
+				AED3351E2243E71100837358 /* URLHelper.swift in Sources */,
 				AE260C852243CEAA009E4346 /* Session.swift in Sources */,
 				AED335142243DCFC00837358 /* ResponseProtocol.swift in Sources */,
+				AED335182243E1E500837358 /* ServerConnection.swift in Sources */,
 				AED335102243DBE300837358 /* RequestProtocol.swift in Sources */,
+				AED3351A2243E45200837358 /* MockJsonReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

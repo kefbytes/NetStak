@@ -8,15 +8,15 @@
 
 import Foundation
 
-protocol ServerConfigProtocol {
+public protocol ServerConfigProtocol {
     var hostBase: String { get }
     var discoMode: Bool { get }
 }
 
 public struct ServerConfig: ServerConfigProtocol {
     
-    var hostBase: String = "https://swapi.co/api"
-    var discoMode: Bool =  false
+    public var hostBase: String = "https://swapi.co/api"
+    public var discoMode: Bool =  false
     
     public init() {
         discoMode = Session.discoMode
