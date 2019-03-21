@@ -1,3 +1,5 @@
+Version 1.0
+
 Copyright (c) 2010-2015 Illumina, Inc.
 All rights reserved.
 
