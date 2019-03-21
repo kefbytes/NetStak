@@ -10,9 +10,9 @@ import Foundation
 
 let jsonFileType = "json"
 
-struct NetStakMockJsonReader {
+public struct NetStakMockJsonReader {
     
-    static func readJson(with fileName: String) -> Data? {
+    public static func readJson(with fileName: String) -> Data? {
         guard let filePath = Bundle.main.path(forResource: fileName, ofType: jsonFileType) else {
             return nil
         }

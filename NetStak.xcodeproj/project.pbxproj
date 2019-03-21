@@ -18,7 +18,21 @@
 		AED3351C2243E48C00837358 /* NetStakServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3351B2243E48C00837358 /* NetStakServiceError.swift */; };
 		AED3351E2243E71100837358 /* NetStakURLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3351D2243E71100837358 /* NetStakURLHelper.swift */; };
 		AED335202243E7F700837358 /* NetStakURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3351F2243E7F700837358 /* NetStakURLRequest.swift */; };
+		AED3352E2243F87D00837358 /* NetStak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE260C792243CE82009E4346 /* NetStak.framework */; };
+		AED335352243F97700837358 /* NetStakURLHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335342243F97700837358 /* NetStakURLHelperTests.swift */; };
+		AED335382244093D00837358 /* NetStakURLRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335372244093D00837358 /* NetStakURLRequestTests.swift */; };
+		AED3353C22440FFB00837358 /* FetchCharacters.json in Resources */ = {isa = PBXBuildFile; fileRef = AED3353B22440FFA00837358 /* FetchCharacters.json */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AED3352F2243F87D00837358 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE260C702243CE82009E4346 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE260C782243CE82009E4346;
+			remoteInfo = NetStak;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AE260C792243CE82009E4346 /* NetStak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetStak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +48,11 @@
 		AED3351B2243E48C00837358 /* NetStakServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStakServiceError.swift; sourceTree = "<group>"; };
 		AED3351D2243E71100837358 /* NetStakURLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStakURLHelper.swift; sourceTree = "<group>"; };
 		AED3351F2243E7F700837358 /* NetStakURLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStakURLRequest.swift; sourceTree = "<group>"; };
+		AED335292243F87D00837358 /* NetStakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetStakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AED3352D2243F87D00837358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AED335342243F97700837358 /* NetStakURLHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStakURLHelperTests.swift; sourceTree = "<group>"; };
+		AED335372244093D00837358 /* NetStakURLRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStakURLRequestTests.swift; sourceTree = "<group>"; };
+		AED3353B22440FFA00837358 /* FetchCharacters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = FetchCharacters.json; path = ../../ModuleTest/ModuleTest/Mock/JSON/FetchCharacters.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +63,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AED335262243F87D00837358 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AED3352E2243F87D00837358 /* NetStak.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -51,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				AE260C7B2243CE82009E4346 /* NetStak */,
+				AED3352A2243F87D00837358 /* NetStakTests */,
 				AE260C7A2243CE82009E4346 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				AE260C792243CE82009E4346 /* NetStak.framework */,
+				AED335292243F87D00837358 /* NetStakTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +95,7 @@
 		AE260C7B2243CE82009E4346 /* NetStak */ = {
 			isa = PBXGroup;
 			children = (
+				AED3353B22440FFA00837358 /* FetchCharacters.json */,
 				AE260C7C2243CE82009E4346 /* NetStak.h */,
 				AE260C7D2243CE82009E4346 /* Info.plist */,
 				AE260C842243CEAA009E4346 /* NetStakSession.swift */,
@@ -76,10 +106,20 @@
 				AED3350F2243DBE300837358 /* NetStakRequestProtocol.swift */,
 				AED335132243DCFC00837358 /* NetStakResponseProtocol.swift */,
 				AED335152243DE3200837358 /* NetStakServerConfig.swift */,
-				AED335172243E1E500837358 /* NetStakServerConnection.swift */,
 				AED335192243E45200837358 /* NetStakMockJsonReader.swift */,
+				AED335172243E1E500837358 /* NetStakServerConnection.swift */,
 			);
 			path = NetStak;
+			sourceTree = "<group>";
+		};
+		AED3352A2243F87D00837358 /* NetStakTests */ = {
+			isa = PBXGroup;
+			children = (
+				AED335342243F97700837358 /* NetStakURLHelperTests.swift */,
+				AED335372244093D00837358 /* NetStakURLRequestTests.swift */,
+				AED3352D2243F87D00837358 /* Info.plist */,
+			);
+			path = NetStakTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,18 +154,40 @@
 			productReference = AE260C792243CE82009E4346 /* NetStak.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		AED335282243F87D00837358 /* NetStakTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AED335312243F87D00837358 /* Build configuration list for PBXNativeTarget "NetStakTests" */;
+			buildPhases = (
+				AED335252243F87D00837358 /* Sources */,
+				AED335262243F87D00837358 /* Frameworks */,
+				AED335272243F87D00837358 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AED335302243F87D00837358 /* PBXTargetDependency */,
+			);
+			name = NetStakTests;
+			productName = NetStakTests;
+			productReference = AED335292243F87D00837358 /* NetStakTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		AE260C702243CE82009E4346 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = KefBytes;
 				TargetAttributes = {
 					AE260C782243CE82009E4346 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
+					};
+					AED335282243F87D00837358 = {
+						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
@@ -142,12 +204,21 @@
 			projectRoot = "";
 			targets = (
 				AE260C782243CE82009E4346 /* NetStak */,
+				AED335282243F87D00837358 /* NetStakTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AE260C772243CE82009E4346 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AED3353C22440FFB00837358 /* FetchCharacters.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AED335272243F87D00837358 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -174,7 +245,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AED335252243F87D00837358 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AED335382244093D00837358 /* NetStakURLRequestTests.swift in Sources */,
+				AED335352243F97700837358 /* NetStakURLHelperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AED335302243F87D00837358 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE260C782243CE82009E4346 /* NetStak */;
+			targetProxy = AED3352F2243F87D00837358 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AE260C7F2243CE82009E4346 /* Debug */ = {
@@ -352,6 +440,42 @@
 			};
 			name = Release;
 		};
+		AED335322243F87D00837358 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6WUZ2D4QXV;
+				INFOPLIST_FILE = NetStakTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "KefBytes-LLC.NetStakTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AED335332243F87D00837358 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6WUZ2D4QXV;
+				INFOPLIST_FILE = NetStakTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "KefBytes-LLC.NetStakTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -369,6 +493,15 @@
 			buildConfigurations = (
 				AE260C822243CE82009E4346 /* Debug */,
 				AE260C832243CE82009E4346 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AED335312243F87D00837358 /* Build configuration list for PBXNativeTarget "NetStakTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AED335322243F87D00837358 /* Debug */,
+				AED335332243F87D00837358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

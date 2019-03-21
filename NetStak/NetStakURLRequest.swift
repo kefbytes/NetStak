@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct NetStakURLRequest {
+public struct NetStakURLRequest {
     
     // MARK: - URLRequest
-    static func create(with url: URL, type: NetStakHTTPMethod) -> URLRequest {
+    public static func create(with url: URL, type: NetStakHTTPMethod) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = type.rawValue
         request.setValue(NetStakServiceConstants.applicationJsonValue, forHTTPHeaderField: NetStakServiceConstants.contentTypeKey)

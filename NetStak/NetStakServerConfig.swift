@@ -15,6 +15,7 @@ public protocol NetStakServerConfigProtocol {
 
 public struct NetStakServerConfig: NetStakServerConfigProtocol {
     
+    // TODO: hostBase must be set to your value
     public var hostBase: String = "https://swapi.co/api"
     public var discoMode: Bool =  false
     
