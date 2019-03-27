@@ -8,6 +8,7 @@
 
 import Foundation
 
+#warning("Set your environment host base values")
 public enum NetStakEnvironment: String {
     case dev = "https://swapi.co/api"
     case qa
