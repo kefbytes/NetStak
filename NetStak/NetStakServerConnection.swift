@@ -14,17 +14,10 @@ public typealias executeGroupCompletionDifferentTypes = ([String : NetStakRespon
 
 public class NetStakServerConnection {
     
-    let defaultSession = URLSession(configuration: .default)
-    let serverConfig: NetStakServerConfigProtocol
-    var activeDataTasks: [String: URLSessionDataTask] = [:]
-    
-    public init(config: NetStakServerConfigProtocol) {
-        self.serverConfig = config
-    }
-    
-    public func execute(with url: URL, and request: NetStakRequestProtocol, completion: @escaping (executeCompletion)) {
+    // MARK: - execute methods
+    public static func execute(with url: URL, and request: NetStakRequestProtocol, session: NetStakSession, completion: @escaping (executeCompletion)) {
         var dataTask: URLSessionDataTask?
-        if serverConfig.discoMode {
+        if session.environment == .mock {
             guard let jsonData = NetStakMockJsonReader.readJson(with: request.mockFileName) else {
                 completion(nil, NetStakServiceError.unableToReadMockJson)
                 return
@@ -36,28 +29,28 @@ public class NetStakServerConnection {
                 completion(nil, NetStakServiceError.unableToInitResponseObject)
             }
         } else {
-            dataTask = defaultSession.dataTask(with: url) {
+            dataTask = session.defaultSession.dataTask(with: url) {
                 (data, responseFromDataTask, error) in
                 do {
-                    self.activeDataTasks[request.taskId] = nil
+                    session.activeDataTasks[request.taskId] = nil
                     guard let unwrappedResponse = responseFromDataTask else {
                         completion(nil, error)
                         return
                     }
                     let response = try request.responseType.init(data: data, urlResponse: unwrappedResponse)
-                    completion(response, nil)
+                    completion(response, nil) 
                 } catch {
                     completion(nil, NetStakServiceError.unableToInitResponseObject)
                 }
             }
             dataTask?.resume()
-            activeDataTasks[request.taskId] = dataTask
+            session.activeDataTasks[request.taskId] = dataTask
         }
     }
     
-    public func execute(with request: NetStakRequestProtocol, and type: NetStakHTTPMethod, completion: @escaping (executeCompletion)) {
+    public static func execute(with request: NetStakRequestProtocol, and type: NetStakHTTPMethod, session: NetStakSession, completion: @escaping (executeCompletion)) {
         var dataTask: URLSessionDataTask?
-        if serverConfig.discoMode {
+        if session.environment == .mock {
             guard let jsonData = NetStakMockJsonReader.readJson(with: request.mockFileName) else {
                 completion(nil, NetStakServiceError.unableToReadMockJson)
                 return
@@ -69,16 +62,16 @@ public class NetStakServerConnection {
                 completion(nil, NetStakServiceError.unableToInitResponseObject)
             }
         } else {
-            guard let url = NetStakURLHelper.buildURL(with: serverConfig, request: request) else {
+            guard let url = NetStakURLHelper.buildURL(with: session, request: request) else {
                 completion(nil, NetStakServiceError.unbuildableURL)
                 return
             }
             let urlRequest = NetStakURLRequest.create(with: url, type: type)
 
-            dataTask = defaultSession.dataTask(with: urlRequest) {
+            dataTask = session.defaultSession.dataTask(with: urlRequest) {
                 (data, responseFromDataTask, error) in
                 do {
-                    self.activeDataTasks[request.taskId] = nil
+                    session.activeDataTasks[request.taskId] = nil
                     guard let unwrappedResponse = responseFromDataTask else {
                         completion(nil, error)
                         return
@@ -90,14 +83,14 @@ public class NetStakServerConnection {
                 }
             }
             dataTask?.resume()
-            activeDataTasks[request.taskId] = dataTask
+            session.activeDataTasks[request.taskId] = dataTask
         }
     }
     
-    public func execute(withMultipleAsyncRequests requests: [NetStakRequestProtocol], and type: NetStakHTTPMethod, completion: @escaping (executeGroupCompletionDifferentTypes)) {
+    public static func execute(withMultipleAsyncRequests requests: [NetStakRequestProtocol], and type: NetStakHTTPMethod, session: NetStakSession, completion: @escaping (executeGroupCompletionDifferentTypes)) {
         var dataTask: URLSessionDataTask?
         var responseDict: [String : NetStakResponseProtocol] = [String : NetStakResponseProtocol]()
-        if serverConfig.discoMode {
+        if session.environment == .mock {
             guard let jsonData = NetStakMockJsonReader.readJson(with: requests[0].mockFileName) else {
                 completion(nil, NetStakServiceError.unableToReadMockJson)
                 return
@@ -114,14 +107,14 @@ public class NetStakServerConnection {
             let unwrappedRequests = requests.compactMap { $0 }
             for request in unwrappedRequests {
                 dispatchGroup.enter()
-                guard let url = NetStakURLHelper.buildURL(with: serverConfig, request: request) else {
+                guard let url = NetStakURLHelper.buildURL(with: session, request: request) else {
                     completion(nil, NetStakServiceError.unbuildableURL)
                     return
                 }
                 let urlRequest = NetStakURLRequest.create(with: url, type: type)
-                dataTask = defaultSession.dataTask(with: urlRequest) {
+                dataTask = session.defaultSession.dataTask(with: urlRequest) {
                     (data, responseFromDataTask, error) in
-                    self.activeDataTasks[request.taskId] = nil
+                    session.activeDataTasks[request.taskId] = nil
                     do {
                         guard let unwrappedResponse = responseFromDataTask else {
                             if let errorDesc = error?.localizedDescription,  errorDesc == "cancelled" {
@@ -141,7 +134,7 @@ public class NetStakServerConnection {
                     dispatchGroup.leave()
                 }
                 dataTask?.resume()
-                activeDataTasks[request.taskId] = dataTask
+                session.activeDataTasks[request.taskId] = dataTask
             }
             dispatchGroup.notify(queue: .main) {
                 completion(responseDict, nil)
@@ -149,8 +142,8 @@ public class NetStakServerConnection {
         }
     }
     
-    func cancelTask(with request: NetStakRequestProtocol) {
-        let dataTask = self.activeDataTasks[request.taskId]
+    public static func cancelTask(with request: NetStakRequestProtocol, session: NetStakSession) {
+        let dataTask = session.activeDataTasks[request.taskId]
         dataTask?.cancel()
     }
     

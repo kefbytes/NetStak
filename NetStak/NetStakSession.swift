@@ -9,13 +9,20 @@
 import Foundation
 
 public enum NetStakEnvironment: String {
-    case dev = "Dev"
-    case qa = "QA"
-    case uat = "UAT"
-    case prod = "Prod"
+    case dev = "https://swapi.co/api"
+    case qa
+    case uat
+    case prod
+    case mock
 }
 
-public struct NetStakSession {
-    public static var discoMode = false
-    public static var environment: NetStakEnvironment = .dev
+public class NetStakSession {
+    public static let shared = NetStakSession()
+    public let defaultSession: URLSession
+    public var environment: NetStakEnvironment
+    public var activeDataTasks: [String: URLSessionDataTask] = [:]
+    private init() {
+        self.defaultSession = URLSession(configuration: .default)
+        self.environment = .dev
+    }
 }

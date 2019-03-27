@@ -12,7 +12,6 @@
 		AED335102243DBE300837358 /* NetStakRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3350F2243DBE300837358 /* NetStakRequestProtocol.swift */; };
 		AED335122243DC3100837358 /* NetStakServiceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335112243DC3100837358 /* NetStakServiceConstants.swift */; };
 		AED335142243DCFC00837358 /* NetStakResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335132243DCFC00837358 /* NetStakResponseProtocol.swift */; };
-		AED335162243DE3200837358 /* NetStakServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335152243DE3200837358 /* NetStakServerConfig.swift */; };
 		AED335182243E1E500837358 /* NetStakServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335172243E1E500837358 /* NetStakServerConnection.swift */; };
 		AED3351A2243E45200837358 /* NetStakMockJsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED335192243E45200837358 /* NetStakMockJsonReader.swift */; };
 		AED3351C2243E48C00837358 /* NetStakServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3351B2243E48C00837358 /* NetStakServiceError.swift */; };
@@ -46,7 +45,6 @@
 		AED3350F2243DBE300837358 /* NetStakRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStakRequestProtocol.swift; sourceTree = "<group>"; };
 		AED335112243DC3100837358 /* NetStakServiceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStakServiceConstants.swift; sourceTree = "<group>"; };
 		AED335132243DCFC00837358 /* NetStakResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStakResponseProtocol.swift; sourceTree = "<group>"; };
-		AED335152243DE3200837358 /* NetStakServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStakServerConfig.swift; sourceTree = "<group>"; };
 		AED335172243E1E500837358 /* NetStakServerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStakServerConnection.swift; sourceTree = "<group>"; };
 		AED335192243E45200837358 /* NetStakMockJsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStakMockJsonReader.swift; sourceTree = "<group>"; };
 		AED3351B2243E48C00837358 /* NetStakServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStakServiceError.swift; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 				AED3351F2243E7F700837358 /* NetStakURLRequest.swift */,
 				AED3350F2243DBE300837358 /* NetStakRequestProtocol.swift */,
 				AED335132243DCFC00837358 /* NetStakResponseProtocol.swift */,
-				AED335152243DE3200837358 /* NetStakServerConfig.swift */,
 				AED335192243E45200837358 /* NetStakMockJsonReader.swift */,
 				AED335172243E1E500837358 /* NetStakServerConnection.swift */,
 			);
@@ -296,7 +293,6 @@
 			files = (
 				AED3351C2243E48C00837358 /* NetStakServiceError.swift in Sources */,
 				AED335202243E7F700837358 /* NetStakURLRequest.swift in Sources */,
-				AED335162243DE3200837358 /* NetStakServerConfig.swift in Sources */,
 				AED335122243DC3100837358 /* NetStakServiceConstants.swift in Sources */,
 				AED3351E2243E71100837358 /* NetStakURLHelper.swift in Sources */,
 				AE260C852243CEAA009E4346 /* NetStakSession.swift in Sources */,
