@@ -11,8 +11,7 @@ import Foundation
 public struct NetStakURLHelper {
     
     public static func buildURL(with session: NetStakSession, request: NetStakRequestProtocol) -> URL? {
-//    public static func buildURL(with config: NetStakServerConfigProtocol, request: NetStakRequestProtocol) -> String? {
-        let baseUrl: String = session.environment.rawValue
+        let baseUrl: String = session.environment.baseURL()
         let endpoint: String = request.urlPath
         var args: String = ""
         if let urlArg = request.urlArguments {
@@ -31,8 +30,6 @@ public struct NetStakURLHelper {
         }
         let urlString = baseUrl + endpoint + args
         return URL(string: urlString)
-//        return urlString
-
     }
     
 }
