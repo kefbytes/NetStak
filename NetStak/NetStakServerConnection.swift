@@ -66,7 +66,7 @@ public class NetStakServerConnection {
                 completion(nil, NetStakServiceError.unbuildableURL)
                 return
             }
-            let urlRequest = NetStakURLRequest.create(with: url, type: type)
+            let urlRequest = NetStakURLRequest.create(with: url, type: type, headerFieldItems: request.headerItems)
 
             dataTask = session.defaultSession.dataTask(with: urlRequest) {
                 (data, responseFromDataTask, error) in
@@ -111,7 +111,7 @@ public class NetStakServerConnection {
                     completion(nil, NetStakServiceError.unbuildableURL)
                     return
                 }
-                let urlRequest = NetStakURLRequest.create(with: url, type: type)
+                let urlRequest = NetStakURLRequest.create(with: url, type: type, headerFieldItems: request.headerItems)
                 dataTask = session.defaultSession.dataTask(with: urlRequest) {
                     (data, responseFromDataTask, error) in
                     session.activeDataTasks[request.taskId] = nil
