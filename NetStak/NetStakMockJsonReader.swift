@@ -8,7 +8,7 @@
 
 import Foundation
 
-let jsonFileType = "json"
+fileprivate let jsonFileType = "json"
 
 public struct NetStakMockJsonReader {
     
