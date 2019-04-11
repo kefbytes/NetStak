@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   spec.source       			= { :git => 'https://github.com/kefbytes/NetStak.git', :tag => '1.0.7' }
   spec.source_files 			= 'NetStak/*.swift'
   spec.framework    			= 'Foundation'
-  spec.swift_version			= '5.0'
+  spec.swift_version			= '4.2'
   spec.ios.deployment_target	= '10.0'
   
 end
