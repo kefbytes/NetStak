@@ -11,10 +11,13 @@ import Foundation
 public struct NetStakURLRequest {
     
     // MARK: - URLRequest
-    public static func create(with url: URL, type: NetStakHTTPMethod, headerFieldItems: [String: String]?) -> URLRequest {
+    public static func create(with url: URL, type: NetStakHTTPMethod, netStakRequest: NetStakRequestProtocol) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = type.rawValue
-        if let headerItems = headerFieldItems {
+        if let httpBody = netStakRequest.requestBody {
+            request.httpBody = httpBody
+        }
+        if let headerItems = netStakRequest.headerItems {
             for item in headerItems {
                 request.addValue(item.value, forHTTPHeaderField: item.key)
             }
