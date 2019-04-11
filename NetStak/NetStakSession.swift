@@ -9,7 +9,7 @@
 import Foundation
 
 public enum NetStakEnvironment: String {
-    case dev = "https://swapi.co/api"
+    case dev
     case qa
     case uat
     case prod
