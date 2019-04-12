@@ -48,7 +48,7 @@ public class NetStakServerConnection {
         }
     }
     
-    public static func execute(with request: NetStakRequestProtocol, and type: NetStakHTTPMethod, session: NetStakSession, completion: @escaping (executeCompletion)) {
+    public static func execute(with request: NetStakRequestProtocol, and session: NetStakSession, completion: @escaping (executeCompletion)) {
         var dataTask: URLSessionDataTask?
         if session.environment == .mock {
             guard let jsonData = NetStakMockJsonReader.readJson(with: request.mockFileName) else {
@@ -66,7 +66,7 @@ public class NetStakServerConnection {
                 completion(nil, NetStakServiceError.unbuildableURL)
                 return
             }
-            let urlRequest = NetStakURLRequest.create(with: url, type: type, netStakRequest: request)
+            let urlRequest = NetStakURLRequest.create(with: url, type: request.requestTypeMethod, netStakRequest: request)
 
             dataTask = session.defaultSession.dataTask(with: urlRequest) {
                 (data, responseFromDataTask, error) in
@@ -87,7 +87,7 @@ public class NetStakServerConnection {
         }
     }
     
-    public static func execute(withMultipleAsyncRequests requests: [NetStakRequestProtocol], and type: NetStakHTTPMethod, session: NetStakSession, completion: @escaping (executeGroupCompletionDifferentTypes)) {
+    public static func execute(withMultipleAsyncRequests requests: [NetStakRequestProtocol], and session: NetStakSession, completion: @escaping (executeGroupCompletionDifferentTypes)) {
         var dataTask: URLSessionDataTask?
         var responseDict: [String : NetStakResponseProtocol] = [String : NetStakResponseProtocol]()
         if session.environment == .mock {
@@ -111,7 +111,7 @@ public class NetStakServerConnection {
                     completion(nil, NetStakServiceError.unbuildableURL)
                     return
                 }
-                let urlRequest = NetStakURLRequest.create(with: url, type: type, netStakRequest: request)
+                let urlRequest = NetStakURLRequest.create(with: url, type: request.requestTypeMethod, netStakRequest: request)
                 dataTask = session.defaultSession.dataTask(with: urlRequest) {
                     (data, responseFromDataTask, error) in
                     session.activeDataTasks[request.taskId] = nil
