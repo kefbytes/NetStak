@@ -8,8 +8,9 @@
 
 import Foundation
 
-enum NetStakServiceError: Error {
+public enum NetStakServiceError: Error {
     case unbuildableURL
     case unableToInitResponseObject
     case unableToReadMockJson
+    case responseisNil
 }
