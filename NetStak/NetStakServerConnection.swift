@@ -8,10 +8,14 @@
 
 import Foundation
 
+public typealias executeCompletion = (Result<NetStakResponseProtocol?, NetStakServiceError>) -> Void
+public typealias executeGroupCompletion = (Result<[String : NetStakResponseProtocol], NetStakServiceError>) -> Void
+
+
 public class NetStakServerConnection {
     
     // MARK: - execute methods
-    public static func execute(with url: URL, and request: NetStakRequestProtocol, session: NetStakSession, completion: @escaping (Result<NetStakResponseProtocol?, NetStakServiceError>) -> Void) {
+    public static func execute(with url: URL, and request: NetStakRequestProtocol, session: NetStakSession, completion: @escaping executeCompletion) {
         var dataTask: URLSessionDataTask?
         if session.environment == .mock {
             guard let jsonData = NetStakMockJsonReader.readJson(with: request.mockFileName) else {
@@ -44,7 +48,7 @@ public class NetStakServerConnection {
         }
     }
     
-    public static func execute(with request: NetStakRequestProtocol, and session: NetStakSession, completion: @escaping (Result<NetStakResponseProtocol?, NetStakServiceError>) -> Void) {
+    public static func execute(with request: NetStakRequestProtocol, and session: NetStakSession, completion: @escaping executeCompletion) {
         var dataTask: URLSessionDataTask?
         if session.environment == .mock {
             guard let jsonData = NetStakMockJsonReader.readJson(with: request.mockFileName) else {
@@ -83,9 +87,7 @@ public class NetStakServerConnection {
         }
     }
 
-    public typealias executeGroupCompletionDifferentTypes = ([String : NetStakResponseProtocol]?, Error?) -> Void
-
-    public static func execute(withMultipleAsyncRequests requests: [NetStakRequestProtocol], and session: NetStakSession, completion: @escaping (Result<[String : NetStakResponseProtocol], NetStakServiceError>) -> Void) {
+    public static func execute(withMultipleAsyncRequests requests: [NetStakRequestProtocol], and session: NetStakSession, completion: @escaping executeGroupCompletion) {
         var dataTask: URLSessionDataTask?
         var responseDict: [String : NetStakResponseProtocol] = [String : NetStakResponseProtocol]()
         if session.environment == .mock {
