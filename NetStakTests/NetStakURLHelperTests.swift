@@ -36,12 +36,10 @@ class NetStakURLHelperTests: XCTestCase {
     }
 
     func testBuildURL() {
-        var serverConfig = NetStakServerConfig()
-        serverConfig.discoMode = true
-        serverConfig.hostBase = "https://swapi.co/api"
         let request = FetchCharactersRequest()
-        XCTAssertNotNil(NetStakURLHelper.buildURL(with: serverConfig, request: request) as URL?)
-        XCTAssertNotNil(NetStakURLHelper.buildURL(with: serverConfig, request: request)!)
+        let session = NetStakSession.shared
+        XCTAssertNotNil(NetStakURLHelper.buildURL(with: session, request: request))
+        XCTAssertNotNil(NetStakURLHelper.buildURL(with: session, request: request) as URL?)
     }
 
 }

@@ -20,7 +20,7 @@ class NetStakURLRequestTests: XCTestCase {
     }
 
     func testCreate() {
-        XCTAssertNotNil(NetStakURLRequest.create(with: URL(string: "https://swapi.co/api")!, type: .get) as URLRequest)
+        XCTAssertNotNil(NetStakURLRequest.create(with: URL(string: "https://swapi.co/api")!, type: .get, headerFieldItems: ["":""]) as URLRequest)
     }
 
 
