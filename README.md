@@ -12,7 +12,7 @@ public class NetStakBaseUrls {
     public var prod: String?
 }
 ```
-You will need to set that values for whichever environments you need to use. I typically add a function in AppDelegate extension to do so.
+You will need to set the values for whichever environments you need to use. I typically add a function in AppDelegate extension to do so.
 ```swift
 extension AppDelegate {
     private func setBaseUrls() {
