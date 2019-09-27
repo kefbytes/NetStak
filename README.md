@@ -24,7 +24,7 @@ extension AppDelegate {
     }
 }
 ```
-Then this gets called from didFinishLaunchingWithOptions. If you want to do it at some other point that it fine you will just need to set them before you make your first service call.
+Then this gets called from didFinishLaunchingWithOptions. If you want to do it at some other point that is fine you will just need to set them before you make your first service call.
 
 In tandom with the method I often use schemes to programmatically set the environment variable in NetStakSession.
 ```swift
